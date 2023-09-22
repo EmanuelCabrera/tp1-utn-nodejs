@@ -9,7 +9,7 @@ app.use(express.json())
 
 app.set('view engine', 'ejs')
 
-const dbUrl = ''
+const dbUrl = 'mongodb+srv://emanuelzembrunski:@cluster0.f7jgxgg.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(dbUrl,{useUnifiedTopology: true})
 .then(
     (result) => app.listen(4001)
