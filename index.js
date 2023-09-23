@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
-const authRoutes = require('./routes/authRoutes')
+const taskRoutes = require('./routes/taskRoutes')
 
 
 app.use(express.static('public'))
@@ -9,7 +9,7 @@ app.use(express.json())
 
 app.set('view engine', 'ejs')
 
-const dbUrl = 'mongodb+srv://emanuelzembrunski:@cluster0.f7jgxgg.mongodb.net/?retryWrites=true&w=majority'
+const dbUrl = ''
 mongoose.connect(dbUrl,{useUnifiedTopology: true})
 .then(
     (result) => app.listen(4001)
@@ -21,7 +21,7 @@ app.get('/', (request, response) => {
 
 })
 
-app.use(authRoutes)
+app.use(taskRoutes)
 
 // app.listen(4000, () => {
 //     console.log('El servidor se esta ejecutando');
